@@ -1,0 +1,59 @@
+GET http://localhost:4004/CatalogService/
+###
+GET http://localhost:4004/CatalogService/$metadata
+
+###Read top2 employees
+GET http://localhost:4004/CatalogService/EmployeeSet?$top=2
+
+###Read 1 employee
+GET http://localhost:4004/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+
+###Read Purchase Orders
+GET http://localhost:4004/CatalogService/POs?$top=2&$expand=Items,PARTNER_GUID
+
+###Read PO on Old syntax
+GET http://localhost:4004/CatalogService/POs('02BD2137-0890-1EEA-A6C2-BB55C1978999')
+
+###Create New Employee
+POST http://localhost:4004/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+    
+            "nameFirst": "Kashif",
+            "nameMiddle": "Khan",
+            "nameLast": "Panigrahi",
+            "nameInitials": null,
+            "sex": "M",
+            "language": "E",
+            "phoneNumber": null,
+            "email":null,
+            "loginName": "AceKay",
+            "salaryAmount": 55549.00,
+            "accountNumber": "111222333",
+            "bankId": "51000000",
+            "bankName": "SBI"
+}
+
+###Read just created employee
+
+GET http://localhost:4004/CatalogService/EmployeeSet/8f7c54b9-49b8-46cf-94c6-9f65e39be492
+
+###Update Salary of an Employee[it will update all the fields , NULL incase no field name is not mentioned]
+PUT http://localhost:4004/CatalogService/EmployeeSet/8f7c54b9-49b8-46cf-94c6-9f65e39be492
+Content-Type: application/json
+
+{
+    "salaryAmount":"500.89",
+    "Currency_code": "USD"
+}
+
+###PATCH Call[it will update the given fields only]
+PATCH http://localhost:4004/CatalogService/EmployeeSet/8f7c54b9-49b8-46cf-94c6-9f65e39be492
+Content-Type: application/json
+
+{
+    "salaryAmount":"5000.89",
+    "nameLast":"Khan",
+    "nameFirst":"Abdul"
+}
