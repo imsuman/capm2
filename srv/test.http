@@ -57,3 +57,51 @@ Content-Type: application/json
     "nameLast":"Khan",
     "nameFirst":"Abdul"
 }
+
+###Create Employee With Custom Handler
+POST http://localhost:4004/my-service-demo/InsertEmoloyeeSrv
+Content-Type: application/json
+
+{
+            "ID": "02BD2137-0890-1EEA-A6C2-BB55C1978756",
+            "nameFirst": "Kashif",
+            "nameMiddle": "Khan",
+            "nameLast": "Panigrahi",
+            "nameInitials": null,
+            "sex": "M",
+            "language": "E",
+            "phoneNumber": null,
+            "email":null,
+            "loginName": "AceKay",
+            "salaryAmount": 55549.00,
+            "accountNumber": "111222333",
+            "bankId": "51000000",
+            "bankName": "SBI"
+}
+
+###Update Employee With Custom Handler
+PUT http://localhost:4004/my-service-demo/UpdateEmoloyeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197A7FB
+Content-Type: application/json
+
+{
+    "nameFirst" :"Salman",
+    "nameLast": "Khan"
+}
+
+###Get the Updated Employee With Custom Handler
+GET http://localhost:4004/my-service-demo/ReadEmoloyeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197A7FB
+
+###Delete Data using custom handler
+DELETE http://localhost:4004/my-service-demo/DeleteEmoloyeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197A7FB
+
+###Read a randon PO
+GET http://localhost:4004/CatalogService/POs?$top=3
+
+###Calling action for the entity
+POST http://localhost:4004/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.boost
+Content-Type: application/json
+
+{}
+
+###Read the largest PO.
+GET http://localhost:4004/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.largestOrder()    

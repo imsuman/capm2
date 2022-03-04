@@ -102,7 +102,9 @@ context transaction {
             LIFECYCLE_STATUS : String(1);
             OVERALL_STATUS   : String(1);
             Items            : Association to many poitems
-                                   on Items.PARENT_KEY = $self
+                                   on Items.PARENT_KEY = $self;
+            NOTE: String(256);
+                
     }
 
     entity poitems : common.Amount {
