@@ -17,7 +17,7 @@ service CatalogService @(path : '/CatalogService') {
     //  entity ProductTexts as projection on master.prodtext;
     entity BPSet                               as projection on master.businesspartner;
 
-    entity POs @(title : '{i18n>poHeader}')    as projection on transaction.purchaseorder {
+    entity POs @(title : '{i18n>poHeader}', odata.draft.enabled: true)    as projection on transaction.purchaseorder {
         *, case LIFECYCLE_STATUS
                when
                    'N'
@@ -36,7 +36,7 @@ service CatalogService @(path : '/CatalogService') {
                 when 'N' then 2
                 when 'B' then 1
                 when 'D' then 3
-                end Criticality:Integer,
+                end as Criticality:Integer,
            Items : redirected to POItems
     } actions {
         function largestOrder() returns array of POs;

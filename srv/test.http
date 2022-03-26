@@ -39,7 +39,7 @@ Content-Type: application/json
 
 GET http://localhost:4004/CatalogService/EmployeeSet/8f7c54b9-49b8-46cf-94c6-9f65e39be492
 
-###Update Salary of an Employee[it will update all the fields , NULL incase no field name is not mentioned]
+###Update Salary of an Employee[it will update all the fields , NULL incase no field name is not mentioned] ***NOT RECOMMENDED IN REAL TIME
 PUT http://localhost:4004/CatalogService/EmployeeSet/8f7c54b9-49b8-46cf-94c6-9f65e39be492
 Content-Type: application/json
 
@@ -63,7 +63,7 @@ POST http://localhost:4004/my-service-demo/InsertEmoloyeeSrv
 Content-Type: application/json
 
 {
-            "ID": "02BD2137-0890-1EEA-A6C2-BB55C1978756",
+            "ID": "02BD2137-0890-1EEA-A6C2-BB55C1978546",
             "nameFirst": "Kashif",
             "nameMiddle": "Khan",
             "nameLast": "Panigrahi",
@@ -98,10 +98,10 @@ DELETE http://localhost:4004/my-service-demo/DeleteEmoloyeeSrv/02BD2137-0890-1EE
 GET http://localhost:4004/CatalogService/POs?$top=3
 
 ###Calling action for the entity
-POST http://localhost:4004/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.boost
+POST http://localhost:4004/CatalogService/POs('02BD2137-0890-1EEA-A6C2-BB55C1978999')/CatalogService.boost
 Content-Type: application/json
 
 {}
 
 ###Read the largest PO.
-GET http://localhost:4004/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC28052')/CatalogService.largestOrder()    
+GET http://localhost:4004/CatalogService/POs('02BD2137-0890-1EEA-A6C2-BB55C1979043')/CatalogService.largestOrder()    

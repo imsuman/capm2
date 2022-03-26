@@ -12,6 +12,7 @@ module.exports = cds.service.impl(async function () {
             const tx = cds.tx(req);
             console.log("--------------Hey Suman Begin----------------");
             console.log(req.params);
+            console.log(NODE_KEY);
             console.log("--------------Hey Suman End----------------");
             await tx.update(POs).with({
                 GROSS_AMOUNT: { '+=': 20000 }, 
