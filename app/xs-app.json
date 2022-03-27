@@ -1,11 +1,11 @@
 { 
-    "welcomeFile": "/purchaseorderapp/webapp/",
+    "welcomeFile": "purchaseorderapp/webapp/",
     "authenticationMethod":"none", 
     "routes": [ 
       { 
         "source": "^/purchaseorderapp/webapp/(.*)$", 
         "target": "$1", 
-        "localDir": "/purchaseorderapp/webapp/" 
+        "localDir": "purchaseorderapp/webapp/" 
       },       
       { 
         "source": "^/(.*)", 
